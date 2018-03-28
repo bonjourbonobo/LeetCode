@@ -43,7 +43,7 @@ class Solution {
         
         if(grid[i][j] == 1){
             
-            grid[i][j] = 0;
+            grid[i][j] = 0; //如果檢查過的grid，就把值設為0
             if(i+1 < grid.length){
                 right = computArea(i+1, j, grid);
             }
