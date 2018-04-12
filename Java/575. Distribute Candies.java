@@ -51,3 +51,19 @@ class Solution {
         return result;
     }
 }
+
+// Solution 2: count how many different cnadies there are
+class Solution {
+    public int distributeCandies(int[] candies) {
+        Set<Integer> set = new HashSet<Integer>();
+        for(int i : candies){
+            set.add(i);
+        }
+        if(set.size() >= candies.length/2){
+            return candies.length/2;
+        }
+        else{
+            return set.size();
+        }
+    }
+}
