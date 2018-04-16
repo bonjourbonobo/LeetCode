@@ -32,6 +32,7 @@ The height and width of the given matrix is in range [1, 100].
 The given r and c are all positive.
 */
 
+// Solution 1: 
 class Solution {
     public int[][] matrixReshape(int[][] nums, int r, int c) {
         
@@ -54,6 +55,27 @@ class Solution {
         for(int i=0; i<r; i++){
             for(int j=0; j<c; j++){
                 result[i][j] = rowTraversing[k];     
+                k++;
+            }
+        }
+        return result;
+    }
+}
+
+// Solution 2: improve performance
+class Solution {
+    public int[][] matrixReshape(int[][] nums, int r, int c) {
+        
+        int totalNum = nums.length*nums[0].length;       
+        if(totalNum != r*c){
+            return nums;
+        }
+        
+        int[][] result = new int[r][c];
+        int k = 0;
+        for(int i=0; i<nums.length; i++){
+            for(int j=0; j<nums[0].length; j++){
+                result[k/c][k%c] = nums[i][j];     
                 k++;
             }
         }
