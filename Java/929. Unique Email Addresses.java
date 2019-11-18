@@ -4,9 +4,9 @@ class Solution {
         Set<String> set = new HashSet<String>();
         
         for(String email : emails){
-            String[] seperate = email.split("@");
-            String local = seperate[0];
-            String domain = seperate[1];
+            String[] separate = email.split("@");
+            String local = separate[0];
+            String domain = separate[1];
             // System.out.println("domain " + domain);
             
             local = local.replaceAll("\\.", "");
